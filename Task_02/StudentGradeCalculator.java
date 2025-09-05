@@ -38,7 +38,14 @@ public class StudentGradeCalculator {
         for(int i=0; i<numberofsubjects; i++){
             System.out.print("Enter the marks of subject "+i+" : ");
             subjects[i] = sc.nextInt();
+
+            // Validate input
+            if (subjects[i] < 0 || subjects[i] > 100) {
+                System.out.println("Invalid marks! Please enter between 0 and 100.");
+                i--; // repeat this subject
+                continue;
         }
+    }
 
         float totalMarks = 0,totalAvgPercent;
 
