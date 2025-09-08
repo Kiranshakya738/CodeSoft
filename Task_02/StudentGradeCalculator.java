@@ -57,14 +57,10 @@ public class StudentGradeCalculator {
         // calculate total average percentage
         totalAvgPercent = totalMarks/numberofsubjects;
 
-
         // show result
         System.out.println("-- RESULT --");
         System.out.println("Total Marks: "+totalMarks);
         System.out.printf("Total Average Percentage: %.2f%n",totalAvgPercent," %"); // %.2f%n it is use to reduce digits afte the decimal point 
         StudentGradeCalculator.Grade(totalAvgPercent); // grade method to call
-
-
     }
-
 }
