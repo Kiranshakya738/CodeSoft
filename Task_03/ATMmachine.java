@@ -1,5 +1,7 @@
 import java.util.*;
 
+
+// create bankaccount class to represent user's account
 class BankAccount {
     private double balance;
     public BankAccount(double inbalance) {
@@ -31,8 +33,7 @@ class BankAccount {
 }
 
 
-// create ATM class to represent bankaccount
-
+// create ATM class 
 class ATM{
     Scanner sc = new Scanner(System.in);
     private BankAccount account;
@@ -42,6 +43,8 @@ class ATM{
         this.account = account;
     }
 
+
+    // design interface
     public void start() {
         while (true) {
             System.out.println("welcome to the ATM machine!");
@@ -67,32 +70,40 @@ class ATM{
         }
     }
 
+    // method to take input and call withdraw method
     public void wid() {
         System.out.print("Enter the amount: ");
         double amount = sc.nextDouble();
         account.withdraw(amount);
     }
 
+    // method to take input and call deposite method
     public void dep() {
         System.out.print("Enter the amount: ");
         double amount = sc.nextDouble();
         account.deposit(amount);
     }
 
+
+    // method to call getbalance
     public void checkBal() {
         System.out.println("Current Balance: "+account.getBalance());
     }
 
 }
 
-public class ATMmachine {
 
+
+// main class
+public class ATMmachine {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        // create bankaccount useraccount
         BankAccount userAccount = new BankAccount(10000);
+        // create useraccount atm
         ATM atm = new ATM(userAccount);
-        atm.start();
+        atm.start(); // start the process
 
     }
 
