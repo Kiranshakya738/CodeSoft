@@ -6,26 +6,26 @@ import java.util.Scanner;
 
 class Student implements Serializable {
     private String name;
-    private String rollNumber;
+    private String rollNum;
     private String grade;
     private int age;
 
     // Constructor
-    public Student(String name, String rollNumber, String grade, int age) {
+    public Student(String name, String rollNum, String grade, int age) {
         this.name = name;
-        this.rollNumber = rollNumber;
+        this.rollNum = rollNum;
         this.grade = grade;
         this.age = age;
     }
 
     // Getters & Setters
     public String getName() { return name; }
-    public String getRollNumber() { return rollNumber; }
+    public String getRollNumber() { return rollNum; }
     public String getGrade() { return grade; }
     public int getAge() { return age; }
 
     public void setName(String name) { this.name = name; }
-    public void setRollNumber(String rollNumber) { this.rollNumber = rollNumber; }
+    public void setRollNumber(String rollNum) { this.rollNum = rollNum; }
     public void setGrade(String grade) { this.grade = grade; }
     public void setAge(int age) { this.age = age; }
 
@@ -33,7 +33,7 @@ class Student implements Serializable {
     public String toString() {
         return "Student{" +
                 "Name='" + name + '\'' +
-                ", Roll No='" + rollNumber + '\'' +
+                ", Roll No='" + rollNum + '\'' +
                 ", Grade='" + grade + '\'' +
                 ", Age=" + age +
                 '}';
@@ -57,9 +57,9 @@ class StudentManagementSystem {
     }
 
     // Remove Student
-    public boolean removeStudent(String rollNumber) {
+    public boolean removeStudent(String rollNum) {
         for (Student s : students) {
-            if (s.getRollNumber().equalsIgnoreCase(rollNumber)) {
+            if (s.getRollNumber().equalsIgnoreCase(rollNum)) {
                 students.remove(s);
                 saveToFile();
                 return true;
@@ -69,9 +69,9 @@ class StudentManagementSystem {
     }
 
     // Search Student
-    public Student searchStudent(String rollNumber) {
+    public Student searchStudent(String rollNum) {
         for (Student s : students) {
-            if (s.getRollNumber().equalsIgnoreCase(rollNumber)) {
+            if (s.getRollNumber().equalsIgnoreCase(rollNum)) {
                 return s;
             }
         }
