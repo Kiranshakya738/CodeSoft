@@ -13,7 +13,7 @@ public class GuessNumber {
        boolean playAgain = true;
 
        while(playAgain){
-        int numberToGuess = random.nextInt(100);
+        int numberToGuess = random.nextInt(100)+1;
         int maxAttempts = 7; // attempts limit
         int attempts = 0; // number of attempts
         boolean guessedCorrectly = false;
@@ -21,7 +21,7 @@ public class GuessNumber {
         System.out.println("Think of a number  between 1 to 100");
         System.out.println("You have 7 attempts to guess it");
 
-        while(attempts!=maxAttempts){
+        while(attempts<maxAttempts){
             System.out.print("Enter your guess number: ");
             int userGuess = input.nextInt();
             attempts++;
